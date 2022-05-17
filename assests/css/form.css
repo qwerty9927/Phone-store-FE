@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+span {
+    font-size: 12px;
+    color: red;
+    margin-left: 10px;
+}
+
+.login-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    background: rgb(255, 245, 245);
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 2px solid black;
+    transform: translate(-50%,-50%);
+}
+
+.login-box h1{
+    margin: 0 0 30px;
+    padding: 0;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.login-box .userbox{
+    position: relative;
+}
+
+.login-box .userbox input{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 15px;
+    color: rgb(0, 0, 0);
+    margin:10px;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+   
+}
+
+.login-box .userbox label{
+    padding-left: 15px;
+    font-size: 16px;
+    color: rgb(7, 12, 12);
+    pointer-events: none;
+}
+.btn{
+    text-align: center;
+    margin: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}       
+
+.btn button{
+    width: 320px;
+    height: 40px;
+    
+}
+.foot{
+    padding-left: 15px;
+    
+}
+.foot a{
+    text-decoration: none;
+    color: rgb(11, 8, 8);
+}
+.foot a:hover{
+    text-decoration: none;
+    color: red;
+}
+
+.login-box .register-box{
+    position: relative;
+}
+
+.login-box .register-box input{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 15px;
+    color: rgb(5, 5, 7);
+    margin:10px;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.login-box .register-box  label{
+    padding-left: 15px;
+    font-size: 16px;
+    color: rgb(7, 12, 12);
+    pointer-events: none;
+}
+.error{
+    background: #f2dede;
+    color: #a94442;
+    padding: 10px;
+    width: 95%;
+    border-radius: 5px;
+    margin: 20px auto;
+}

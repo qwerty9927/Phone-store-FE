@@ -1,0 +1,32 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    height: 50px;
+}
+
+td img {
+    height: 34px;
+    transition: .5s;
+ }
+
+td:hover img{
+    height: 100px;
+}
+
+tr:hover {
+    background-color: coral;
+}
+
+.info {
+    background-color: #fff;
+    box-shadow: 0 0 5px 2px rgba(0,0, 0,.1);
+    padding: 20px;
+    margin-top: 20px;
+}

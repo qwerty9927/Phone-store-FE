@@ -1,0 +1,462 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.container header{
+  max-width: 1200px;
+  margin: auto;
+}
+
+.header{
+  height: 60px;
+  background-color: #e0042a;
+}
+
+.header ul{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header ul li,a {
+  color: white;
+  font-size: 12px;
+}
+
+.dropbtn {
+  background-color: #e0042a;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #e0042a;
+}
+
+.header ul li:nth-child(3) {
+  position: relative;
+}
+
+.header ul li:nth-child(3) input {
+  height: 30px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  padding-left: 30px;
+  outline: none;
+}
+
+.header ul li:nth-child(3) i {
+  position: absolute;
+  font-size: 17px;
+  left: 8px;
+  color: gray;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+.header ul li:nth-child(4) button {
+  height: 40px;
+  padding: 0 5px;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  border: 1px solid #e0042a;
+  border-radius: 5px;
+}
+
+.header ul li:nth-child(4) button i {
+  margin-right: 6px;
+}
+
+.header ul li:nth-child(4) button:hover {
+  background-color: rgba(209, 206, 206, 0.357);
+}
+
+.header ul li:nth-child(5) button {
+  height: 40px;
+  padding: 0 5px;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  border: 1px solid #e0042a;
+  border-radius: 5px;
+}
+
+.header ul li:nth-child(5) button i {
+  margin-right: 6px;
+}
+
+.header ul li:nth-child(5) button:hover {
+  background-color: rgba(209, 206, 206, 0.357);
+}
+
+.header ul li:nth-child(6) button {
+  height: 40px;
+  padding: 0 5px;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  border: 1px solid #e0042a;
+  border-radius: 5px;
+}
+
+.header ul li:nth-child(6) button i {
+  margin-right: 6px;
+}
+
+.header ul li:nth-child(6) button:hover {
+  background-color: rgba(209, 206, 206, 0.357);
+}
+
+.header ul li:nth-child(7) button {
+  height: 40px;
+  padding: 0 5px;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  border: 1px solid #e0042a;
+  border-radius: 5px;
+}
+
+.header ul li:nth-child(7) button i {
+  margin-right: 6px;
+}
+
+.header ul li:nth-child(7) button:hover {
+  background-color: rgba(209, 206, 206, 0.357);
+}
+.menu {
+  height: 40px;
+  background-color: #000;
+  font-size: 20px;
+}
+.menu ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+.menu li {
+  /* height: 40px; */
+  width: 100px;
+  margin-right: 10px;
+  text-align: center;
+  height: inherit;
+  transition: .2s;
+}
+.menu li a {
+  display: block;
+  color: #fff;
+  line-height: 40px;
+}
+
+.menu li:hover {
+  background-color: #ccc;
+}
+
+.container {
+  width: 1200px;
+  margin: auto;
+}
+
+.header_container {
+  padding-top: 10px;
+}
+
+.slideshow-container {
+  max-width: 1200px;
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+.main_container {
+  margin-top: 20px;
+}
+
+.title_top {
+  display: flex;
+  background-color: #e0042a;
+  height: 50px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title_top .title {
+  padding-left: 20px;
+}
+
+.title_top .option {
+  margin-right: 10px;
+}
+
+.title_top .option ul {
+  display: flex;
+}
+
+.option li {
+  padding: 10px;
+  margin-right: 10px;
+  background-color: #ccc;
+  border-radius: 5px;
+}
+
+.list_items{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -6px;
+  margin-right: -6px;
+}
+
+.product-item {
+  flex-basis: 24%;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #bbcfc4;
+  margin-bottom: 20px;
+  position: relative;
+  transition: all .2s ease-in;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.product-item:hover {
+  box-shadow: 0 2px 12px rgb(0 0 0 / 40%);
+}
+
+.product-item:hover .product-thumb {
+  transform: translateY(-15px);
+}
+
+.product-top .product-thumb {
+  margin: 20px 0;
+  width: 100%;
+  transition: .2s ease-in;
+}
+
+.buy-now, .product-name {
+  padding-bottom: 5px;
+  display: block;
+  text-decoration: none; 
+  color: #000;
+  
+}
+
+.buy-now {
+  padding: 10px;
+  background-color: #fed000;
+  border-radius: 5px;
+  color: #000;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 20px 0 10px;
+  box-shadow: 0 2px 2px rgba(0,0,0,.5);
+  transition: .1s;
+}
+
+.buy-now:active {
+  transform: scale(0.98);
+  box-shadow: none;
+  transition: .1s;
+}
+
+.buy-now:hover {
+  background-color: #aaa000;
+  color: #fff;
+  box-shadow: none;
+}
+
+.product-info .product-price {
+  color: #111;
+  font-weight: 600;
+  font-size: 18px;
+  color: #d0021c;
+}
+
+/*----------------------footer------------------*/
+.footer .container{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.Content li a{
+  color: black;
+  font-size: 13px;
+}
+
+.Contact li a{
+  color: black;
+  font-size: 13px;
+}
+
+.Care-Service li a{
+  color: black;
+  display: flex;
+}
+
+.Care-Service-two li a{
+  color: black;
+}
+
+.page ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 32px 0;
+}
+
+.page ul li {
+  height: 30px;
+  width: 30px;
+  background-color: #aaa;
+  margin: 0 10px;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+.page ul li:active {
+  transform: scale(.95);
+}
+
+.fa-star,
+.fa-star-half
+{
+    color: yellowgreen;
+    padding: 3% 0;
+}
+
+#cart_Count{
+    text-align: center;
+    padding: 0 0.9rem 0.1rem 0.9rem;
+    border-radius: 3rem;
+}
+.shopping-cart{
+    padding: 3% 0;
+}
+.cart-items+.cart-items{
+    padding: 2% 0;
+}
+.price-details h6{
+    padding: 3% 2%;
+}
