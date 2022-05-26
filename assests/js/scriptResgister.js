@@ -38,7 +38,7 @@ function kiemtra(){
 			return false
 		}
 	}
-	if(!/[a-zA-Z0-9][a-zA-Z0-9-_ ]{8,24}/.test($('.resgister input[name = "pass1"]').val())){
+	if(!/[a-zA-Z0-9][a-zA-Z0-9-_ ]{7,24}/.test($('.resgister input[name = "pass1"]').val())){
 		$('.resgister input[name = "pass1"] + div span').text("Password cần lớn hơn 8")
 		$('.resgister input[name = "pass1"]').focus()
 		return false
@@ -51,6 +51,28 @@ function kiemtra(){
 		return false
 	} else {
 		$('.resgister input[name = "pass2"] + div span').text("")
+	}
+	
+	if(!/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/.test($('.resgister input[name = "sdt"]').val())){
+		$('.resgister input[name = "sdt"] + div span').text("Số điện thoại không hợp lệ")
+		$('.resgister input[name = "sdt"]').focus()
+		return false
+	} else {
+		$('.resgister input[name = "sdt"] + div span').text("")
+	}
+	if(!/[a-zA-Z][a-zA-Z0-9-_/]{1,24}/.test($('.resgister input[name = "diachi"]').val())){
+		$('.resgister input[name = "diachi"] + div span').text("Địa chỉ không hợp lệ")
+		$('.resgister input[name = "diachi"]').focus()
+		return false
+	} else {
+		$('.resgister input[name = "diachi"] + div span').text("")
+	}
+	if(!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test($('.resgister input[name = "email"]').val())){
+		$('.resgister input[name = "email"] + div span').text("Email không hợp lệ")
+		$('.resgister input[name = "email"]').focus()
+		return false
+	} else {
+		$('.resgister input[name = "email"] + div span').text("")
 	}
 	return true
 }

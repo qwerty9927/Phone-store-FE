@@ -1,9 +1,7 @@
 <header id="header">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a href="index.php" class="navbar-brand">
-            <h3 class="px-5">
-                <i class="fas fa-shopping-basket"></i>Shopping Cart
-            </h3>
+    <nav class="navbar navbar-expand-lg navbar-dark"  style="background-color: #e0042a">
+        <a href="http://localhost/client" class="navbar-brand">
+            <img src=".././assests/img/logocellphones.png" alt="" style="height: 50px">
         </a>
         <button class="navbar-toggler" type="button" 
             data-toggle="collapse"

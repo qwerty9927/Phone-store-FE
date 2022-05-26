@@ -10,7 +10,7 @@
 
   ul {
     list-style: none;
-
+    padding: 0;
   }
   
   a {
@@ -266,27 +266,44 @@
   margin-top: 20px;
 }
 
-  .footer .container{
-    display: flex;
-    justify-content: space-evenly;
-    
-  }
+.footer .container{
+  display: flex;
+  justify-content: space-evenly;
   
-  .Content li a{
-    color: black;
-    font-size: 13px;
-  }
-  
-  .Contact li a{
-    color: black;
-    font-size: 13px;
-  }
-  
-  .Care-Service li a{
-    color: black;
-    display: flex;
-  }
-  
-  .Care-Service-two li a{
-    color: black;
-  }
+}
+
+.Content li a{
+  color: black;
+  font-size: 13px;
+}
+
+.Contact li a{
+  color: black;
+  font-size: 13px;
+}
+
+.Care-Service li a{
+  color: black;
+  display: flex;
+}
+
+.Care-Service-two li a{
+  color: black;
+}
+
+.drop_down_box {
+  position: relative;
+}
+
+.drop_down{
+  position: absolute;
+  background-color: #fff;
+  padding: 10px;
+  display: none;
+  width: 100px;
+  box-shadow: 0 0 5px 2px rgba(0,0,0,0.1);
+}
+
+.drop_down_box:hover .drop_down{
+  display: block;
+}

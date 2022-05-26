@@ -40,6 +40,7 @@
       $arr_key = "";
       $arr_value = "";
       foreach($data as $key=>$value){
+        
         $arr_key .= $key . ",";
         $arr_value .= "'".$value."'" . ",";
       }

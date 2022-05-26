@@ -4,22 +4,26 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="./assests/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <title>Document</title>
+  <title>Kẻ ăn tiền của bạn</title>
 </head>
 <body>
   <?php
     session_start();
     require_once("./DB.php");
-    // require_once("./Shopping_Cart/php/xuly.php");
+    if(!isset($_GET['key'])){
+      header("Location: http://localhost/client?key=apple");
+    }
     $db = new DB();
   ?>
   <div class="header">
     <div class="container">
       <ul> 
-          <li><a href="sdfsd"><img style="width: 198px;" src="./assests/img/logocellphones.png" alt="logo"></a></li>
+          <li><a href="./"><img style="width: 198px;" src="./assests/img/logocellphones.png" alt="logo"></a></li>
           <div class="dropdown">
               <button class="dropbtn">Địa điểm</button>
               <div class="dropdown-content">
@@ -28,7 +32,7 @@
               </div>
           </div>
           <li>
-            <input type="text" placeholder="Bạn cần tìm gì?"><i class="fa-solid fa-magnifying-glass"></i></li>
+            <input type="text" id="search_box" placeholder="Bạn cần tìm gì?"><i class="fa-solid fa-magnifying-glass" onclick="search(1)"></i></li>
           <li>
             <a href="">
               <button>
@@ -46,7 +50,7 @@
           </li>
           <li>
           <?php if(isset($_SESSION['Username_user'])){
-            $url = './Shopping_Cart/cart.php'; 
+            $url = './Shopping_Cart/index.php'; 
           }else {
             $url = './login.php';
           }?>
@@ -67,23 +71,43 @@
             </a>
           </li>
           <li>
-            <a href="login.php">
-              <button>
-                <i class="fa-solid fa-id-card"></i>
-                Smember
-              </button>
-            </a>
+            <?php
+              if(isset($_SESSION['Username_user'])){
+                echo "
+                    <div class='drop_down_box'>
+                      <a href='logout.php' class='show_drop_down'>
+                        <button>
+                          <i class='fa-solid fa-id-card'></i>
+                          LogOut
+                        </button>
+                      </a>
+                      <div class='drop_down'>
+                        <a href='./Shopping_Cart/lichsudathang.php'>
+                          <button class='btn btn-danger mx-2' style='background-color: green'>Xem lại đơn hàng</button>
+                        </a>
+                      </div>
+                    </div>
+                      ";
+              } else {
+                echo "<a href='login.php'>
+                        <button>
+                          <i class='fa-solid fa-id-card'></i>
+                          Smember
+                        </button>
+                      </a>";
+              }
+            ?>
           </li>
       </ul>
     </div>
   </div>
   <div class="menu">
     <ul>
-      <li><a href="./?key=apple">Apple</a></li>
-      <li><a href="./?key=samsung">Samsung</a></li>
-      <li><a href="./?key=xiaomi">Xiaomi</a></li>
-      <li><a href="./?key=oppo">Oppo</a></li>
-      <li><a href="./?key=nokia">Nokia</a></li>
+      <li><a href=".?key=apple">Apple</a></li>
+      <li><a href=".?key=samsung">Samsung</a></li>
+      <li><a href=".?key=xiaomi">Xiaomi</a></li>
+      <li><a href=".?key=oppo">Oppo</a></li>
+      <li><a href=".?key=nokia">Nokia</a></li>
     </ul>
   </div>
   <div class="container">
@@ -126,7 +150,7 @@
       <div class="bottom_main">
         <div class="title_top">
           <div class="title">
-            <h2>San pham</h2>
+            <h2>Sản phẩm</h2>
           </div>
         </div>
         <div class='list_items'>

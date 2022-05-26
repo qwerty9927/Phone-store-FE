@@ -27,7 +27,7 @@ function kiemtra(){
 		if(result == false){
       alert("Tài khoản hoặc mật khẩu không đúng")
 		} else {
-      window.location.href = "http://localhost/client/index.php"
+      window.location.href = "http://localhost/client/"
     }
 	})
 }

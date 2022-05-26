@@ -26,7 +26,7 @@
   <div class="header">
       <div class="container">
             <ul> 
-                <li><a href=""><img style="width: 198px;" src="logocellphones.png" alt="logo"></a></li>
+                <li><a href="../"><img style="width: 198px;" src="../assests/img/logocellphones.png" alt="logo"></a></li>
                 <div class="dropdown">
                     <button class="dropbtn">Địa điểm</button>
                     <div class="dropdown-content">
@@ -54,7 +54,7 @@
                     </a>
                 </li>
                 <?php if(isset($_SESSION['Username_user'])){
-                    $url = '../Shopping_Cart/cart.php'; 
+                    $url = '../Shopping_Cart/index.php'; 
                 }else {
                     $url = '../login.php';
                 }?>
@@ -76,12 +76,32 @@
                     </a>
                 </li>
                 <li>
-                    <a href="Dangnhap.php">
-                        <button>
-                            <i class="fa-solid fa-id-card"></i>
-                            Smember
-                        </button>
-                    </a>
+                    <?php
+                        if(isset($_SESSION['Username_user'])){
+                            echo "
+                                <div class='drop_down_box'>
+                                    <a href='logout.php' class='show_drop_down'>
+                                        <button>
+                                        <i class='fa-solid fa-id-card'></i>
+                                        LogOut
+                                        </button>
+                                    </a>
+                                    <div class='drop_down'>
+                                        <a href='../Shopping_Cart/lichsudathang.php'>
+                                        <button class='btn btn-danger mx-2' style='background-color: green;font-size: 12px!important;'>Xem lại đơn hàng</button>
+                                        </a>
+                                    </div>
+                                </div>
+                                ";
+                        } else {
+                            echo "<a href='login.php'>
+                                    <button>
+                                    <i class='fa-solid fa-id-card'></i>
+                                    Smember
+                                    </button>
+                                </a>";
+                        }
+                    ?>
                 </li>
             </ul>
         </div>
@@ -118,14 +138,10 @@
                 <div class="col-sm-7">
                     <ul>
                         <li>Bộ nhớ trong: <?php echo $arrResult[0]['ROM']?></li>    
-                        <!-- <li>Camera chính: Triple 12Mp + 12Mp + 12Mp</li>
-                        <li>Độ phân giải màn hình: 1125 x 2436 pixels</li>
-                        <li>Dung lượng pin: 3190mAh</li> -->
                         <li>Thương hiệu: <?php echo $arrResult[0]['TenThuongHieu']?></li>
                         <li>CPU: <?php echo $arrResult[0]['CPU']?></li>
                         <li>Hệ điều hành: IOS 13</li>
                         <li>RAM: <?php echo $arrResult[0]['RAM']?></li>
-                        <!-- <li>Kích thước màn hình: 5.8 inches</li> -->
                         <li>Giá cũ: <a style="text-decoration: line-through; font-size: 16px"><?php echo (intval($arrResult[0]['Gia']) + 1000000)?>VND</a></li>
                         <li>Giá mới: <?php echo $arrResult[0]['Gia']?>VND</li>
                     </ul>
@@ -134,18 +150,24 @@
                     </div>
                     <div class="button-two"> 
                     <?php if(isset($_SESSION['Username_user'])){
-                        $url = "?action=add&id={$arrResult[0]['idCD']}&quantity=1"; 
+                        $urlCart = "?action=add&id={$arrResult[0]['idCD']}&quantity=1"; 
+                        $urlCartPayment = "?action=add&id={$arrResult[0]['idCD']}&quantity=1&active";
+                        $classActiveCart = "activeCart";
+                        $clssActivePayMent = "activePayMent";
                     }else {
-                        $url = '../login.php';
+                        $urlCart = '../login.php';
+                        $urlCartPayment = '../login.php';
+                        $classActiveCart = "";
+                        $clssActivePayMent = "";
                     }?>
-                        <a class="addToCart" href="<?php echo $url?>">  
+                        <a class="addToCart <?php echo $classActiveCart?>" href="<?php echo $urlCart?>">  
                             <button type="button" class="btn btn-outline-danger" style="width: 140px; height: 70px">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
                                     <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
                                 </svg> Thêm vào giỏ hàng
                             </button>
                         </a> 
-                        <a href="./?action&id=<?php echo $arrResult[0]["idCD"]?>">
+                        <a class="payMent <?php echo $clssActivePayMent?>" href="<?php echo $urlCartPayment?>">
                             <button type="button" class="btn btn-outline-danger" style="width: 140px; height: 70px; margin-left: 32px">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash" viewBox="0 0 16 16">
                                     <path d="M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
